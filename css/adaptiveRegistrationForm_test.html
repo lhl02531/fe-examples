@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adaptiveRegistrationForm_test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        form {
+
+            max-width: 90%;
+            margin: 20px auto;
+            border-top: 8px solid #008b8b;
+            border-radius: 10px;
+            box-shadow: 0 0, -4px 1px #ddd, 3px 5px 0 7px #ddd, 2px 2px #ddd;
+            padding: 20px 10px 30px 20px;
+            overflow: hidden;
+        }
+
+        form>div {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .header {
+            color: #008b8b;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        label {
+            float: left;
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        .right {
+            position: relative;
+            max-width: 85%;
+            overflow: hidden;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select,
+        textarea {
+            
+            background-color: whitesmoke;
+            width: 100%;
+            padding: 5px 12px;
+            border: none;
+        }
+
+        input[type=submit] {
+            float: right;
+            padding: 12px 20px;
+            background-color: #008b8b;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .userlogo {
+            position: absolute;
+            width: 14px;
+            top: 5px;
+            left: 8px;
+        }
+
+        #username{
+            padding-left: 40px;
+        }
+
+        @media screen and (max-width:600px) {
+            form {
+                width: 90%;
+            }
+
+            label {
+                float: none;
+                width: 100%;
+                margin: 0;
+            }
+
+            .right {
+                padding-top: 10px;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 230130-百度ife-响应式注册页 -->
+
+
+    <form>
+        <div class="header">Register</div>
+        <div>
+            <label for="fullname">Full Name</label>
+            <div class="right">
+                <input type="text" placeholder="Your full name..." name="fullname" id="fullname">
+            </div>
+        </div>
+        <div>
+            <label for="username">User Name</label>
+            <div class="right">
+                <img class="userlogo" src="./user.png" alt="" srcset="">
+                <input type="text" placeholder="UserName" name="username" id="username">
+            </div>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <div class="right">
+                <input type="password" placeholder="Your password..." name="password" id="password">
+            </div>
+        </div>
+        <div>
+            <label for="address">Address</label>
+            <div class="right">
+                <select name="address" id="address">
+                    <option value="China" selected>China</option>
+                    <option value="China">Usa</option>
+                    <option value="China">Russia</option>
+                    <option value="China">Japan</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label for="suggestion">Suggestion</label>
+            <div class="right">
+                <textarea name="suggestion" id="suggestion" cols="30" rows="10"
+                    placeholder="Write something..."></textarea>
+            </div>
+        </div>
+        <input type="submit" value="submit">
+    </form>
+
+
+</body>
+
+</html>

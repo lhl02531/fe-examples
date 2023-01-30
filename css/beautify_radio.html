@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beautify-radio_美化radio</title>
+    <style>
+        input[type="radio"]{
+            appearance: none;
+        }
+
+        input[type="radio"]{
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid grey;
+            vertical-align: -5px;
+            background-color: #fff;
+        }
+
+        input[type="radio"]::before{
+            /* content 必需 */
+            content: ' ';
+            display: block;
+            width: 10px;
+            height: 10px;
+            
+            border-radius: 50%;
+            background-color: red;
+            /* scale(0) 隐藏元素, translate 移动元素*/
+            transform: translate(3px, 3px) scale(0);
+            transition: all .3s ease-in;
+            /* 元素居中逐渐放大 */
+            transform-origin: center;
+        }
+
+        input[type="radio"]:checked::before{
+            /* transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2); */
+            transform: translate(3px, 3px) scale(1);
+            transition: all .3s cubic-bezier(0.25,0.25,0.56,2);
+        }
+    </style>
+</head>
+<body>
+    <!-- 代码来自MDN，略修改，添加自己理解 -->
+    <!-- source code come from MDN, below is the link -->
+    <!-- https://developer.mozilla.org/en-US/docs/Learn/Forms/Advanced_form_styling -->
+    <form>
+        
+        <p>
+            <input type="radio" name="fruit" value="cherry" id="cherry">
+            <label for="cherry">cherry</label>
+        </p>
+        <p>
+            <input type="radio" name="fruit" value="cherry" id="Banana">
+            <label for="Banana">Banana</label>
+        </p>
+        <p>
+            <input type="radio" name="fruit" value="Strawberry" id="Strawberry">
+            <label for="Strawberry">Strawberry</label>
+        </p>
+    </form>
+</body>
+</html>

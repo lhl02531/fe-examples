@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beautify checkbox-美化checkbox</title>
+    <style>
+        input[type="checkbox"] {
+            /* 去掉系统自带样式 */
+            appearance: none;
+        }
+
+        input[type="checkbox"] {
+            position: relative;
+            /* 设置checkbox样式 */
+            width: 1em;
+            height: 1em;
+            border: 1px solid gray;
+            /* 距离 */
+            vertical-align: -2px;
+            /* 勾选颜色 */
+            color: green;
+        }
+
+       
+        input[type="checkbox"]::before {
+
+            content: '√';
+            position: absolute;
+            right: 0;
+            top: -0.3em;
+            font-size: 1.4em;
+            visibility: hidden;
+        }
+
+        input[type="checkbox"]:checked::before {
+             /* Use `visibility` instead of `display` to avoid recalculating layout */
+            
+            visibility: visible;
+        }
+
+        input[type="checkbox"]:checked {
+            border-color: #03a9f4;
+        }
+        input[type="checkbox"]:disabled {
+            /* 设置checkbox 没选中状态 */
+            border-color: black;
+            background: #ddd;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+      <!-- 代码来自MDN，略修改，添加自己理解 -->
+    <!-- source code come from MDN, below is the link -->
+    <!-- https://developer.mozilla.org/en-US/docs/Learn/Forms/Advanced_form_styling -->
+    <form>
+        <p>
+            <label>
+                <input type="checkbox" name="fruit" value="cherry" id="">
+                I Like Cherry
+            </label>
+        </p>
+        <p>
+            <label>
+                <input type="checkbox" name="fruit" value="banana" disabled id="">
+                I Like banana
+            </label>
+        </p>
+        <p>
+            <label>
+                <input type="checkbox" name="fruit" value="strawberry" id="">
+                I Like strawberry
+            </label>
+        </p>
+    </form>
+</body>
+
+</html>
