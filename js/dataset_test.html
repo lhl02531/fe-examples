@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dataset_test</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tabs{
+            padding-left: 10px;
+            width: 600px;
+        }
+        .nav-tabs{
+            position: relative;
+            
+        }
+        .nav-tabs ul{
+            /* overflow: hidden; */
+            margin-bottom: 30px;
+        }
+        .clearfix::after{
+            content: ' ';
+            display: block;
+            clear: both;
+        }
+        .nav-tabs::after{
+            display: block;
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            background-color: #000;
+        }
+        li{
+            position: relative;
+            float: left;
+            /* width: 50px; */
+            margin-right: 10px;
+            list-style: none;
+        }
+        
+        li:last-child{
+            margin-right: 0;
+        }
+        li a{
+            position: relative;
+            color: #000;
+            font-size: 20px;
+            font-weight: lighter;
+            text-decoration: none;
+        }
+        a.active::after{
+            display: block;
+            content: '';
+            position: relative;
+            width: 80px;
+            height: 20px;
+            bottom: -10px;
+            left: 10px;
+            background-color: rgb(8, 156, 84);
+            transition: all .2s ease;
+        }
+        a:nth-of-type(2).active::after{
+            background-color: blue;
+        }
+
+        a:nth-of-type(3).active::after{
+            background-color: red;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <!-- 230130-baiduife-dataset-测试2-实现一个 Tab 选项卡项目 -->
+    <!-- http://ife.baidu.com/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E7%8F%AD/javascript/event.html -->
+    <div class="tabs">
+        <!-- 导航栏 -->
+        <nav class="nav-tabs">
+          <ul class="clearfix">
+            <li>
+              <a class="tab active" href="javascript:;" data-content="weapon">倚天屠龙记</a>
+            </li>
+            <li><a class="tab" href="javascript:;" data-content="Carving">射雕英雄传</button></a>
+            <li>
+              <a class="tab" href="javascript:;" data-content="dragon">天龙八部</a>
+            </li>
+          </ul>
+        </nav>
+      
+        <!-- 内容栏 -->
+        <section data-content="weapon">
+            《倚天屠龙记》是作家金庸创作的长篇武侠小说，1961—1962年连载于《明报》，是“射雕三部曲”系列第三部。
+《倚天屠龙记》以安徽农民朱元璋揭竿而起建立明朝天下为背景，以张无忌的成长为线索，叙写江湖上的各帮各派、各种人物的恩怨情仇，它把中国历史上元朝的兴衰和江湖道义、恩仇平行交叉起来。 [1]  该书表达了作者既反对异族侵略，也反对本民族暴政的思想。 [2] 
+《倚天屠龙记》把《明报》自《神雕侠侣》以来所产生的影响进一步扩大。
+        </section>
+        <section data-content="Carving">
+            《射雕英雄传》是金庸创作的长篇武侠小说，最初连载于1957～1959年的《香港商报》，后收录在《金庸作品集》中， [1]  是金庸“射雕三部曲”的第一部。
+《射雕英雄传》以宋宁宗庆元五年（1199年）至成吉思汗逝世（1227年）这段历史为背景，反映了南宋抵抗金国与蒙古两大强敌的斗争，充满爱国的民族主义情愫。 [2] 
+该小说历史背景突出，场景纷繁，气势宏伟，具有鲜明的“英雄史诗”风格；在人物创造与情节安排上，它打破了传统武侠小说一味传奇，将人物作为情节附庸的模式，坚持以创造个性化的人物形象为中心，坚持人物统帅故事，按照人物性格的发展需要及其内在可能性、必然性来设置情节，从而使这部小说达到了事虽奇人却真的妙境。
+        </section>
+        <section data-content="dragon">
+            《天龙八部》是中国现代作家金庸创作的长篇武侠小说。这部小说从1963年9月开始创作并连载于《明报》，至1966年5月完成。前后共有三版，在2005年第三版中经历6稿修订，结局改动较大。
+这部小说以宋哲宗时代为背景，通过宋、辽、大理、西夏、吐蕃等王国之间的武林恩怨和民族矛盾，从哲学的高度对人生和社会进行审视和描写，展示了一幅波澜壮阔的生活画卷。其故事之离奇曲折、涉及人物之众多、历史背景之广泛、武侠战役之庞大、想象力之丰富当属“金庸小说”之最。作品风格宏伟悲壮，是一部写尽人性、悲剧色彩浓厚的史诗巨著。 [17] 
+这部小说曾多次被改编成电影、电视剧、漫画及游戏。小说的第四十一回“燕云十八飞骑，奔腾如虎风烟举”于2004年入选人民教育出版社出版的全日制普通高级中学语文读本（必修）。
+        </section>
+      </div>
+
+      <script>
+            const el_sec = document.getElementsByTagName('section')
+            const el_a   = document.querySelectorAll('.nav-tabs a')
+            const el_li   = document.querySelectorAll('.nav-tabs li')
+            const el_ul  = document.querySelectorAll('.nav-tabs ul')[0]
+            function init(el){
+                for(let i = 1; i < el.length;i++)
+                    el[i].style.display = 'none'
+            }
+            function showActContent(el, activeEl){
+                const content = activeEl.dataset.content
+                for(let i = 0; i < el.length; i++){
+                    if(el[i].dataset.content === content){
+                        el[i].style.display = 'block'
+                        continue
+                    }
+
+                    el[i].style.display = 'none'
+                }
+                 
+            }
+            init(el_sec, el_a[0])
+            el_ul.addEventListener('click', function(e){
+                console.log(e.target)
+                for(let i = 0; i < el_a.length; i++){
+                    el_a[i].classList.remove('active')
+                }
+                e.target.classList.add('active')
+                showActContent(el_sec, e.target)
+            })
+
+            
+      </script>
+</body>
+</html>
