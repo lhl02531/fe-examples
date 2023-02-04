@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form_validate-表单校验</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #fff;
+        }
+        form{
+            margin: 50px auto 0;
+            max-width: 600px;
+            padding: 25px 10px;
+        }
+        .row{
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        label{
+            width: 80px;
+            float: left;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        .column{
+            width: 490px;
+            max-width: 490px;
+            float: left;
+        }
+        input{
+            width: 100%;
+            max-width: 100%;
+            border: 1px solid gray;
+            border-radius: 2px;
+            height: 35px;
+            padding: 2px 10px;
+            /* 去掉outline */
+            outline: none;
+        }
+
+
+        input:focus{
+           border-color: #2980b9;
+        }
+
+        input.error{
+            border-color: red;
+        }
+        
+        input.success{
+            border-color: green;
+        }
+
+        .msg{
+            margin-top: 10px;
+            color: grey;
+            font-size: 12px;
+        }
+        .error{
+            color: red;
+        }
+        .success{
+            color: green;
+        }
+
+
+
+        input[type="submit"]{
+            float: right;
+            width: 100px;
+            border: none;
+            padding: 2px 10px;
+            font-size: 12px;
+            color: #fff;
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <!-- baiduife-230201-表单验证 -->
+
+    <!-- msg_ == m_ -->
+    <form id="f1">
+        <div class="row">
+            <label for="uname">用户名</label>
+            <div class="column">
+                <input type="text" name="uname" id="uname" data-msg="m_uname">
+                <div id="m_uname" class="msg"></div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="password">密码</label>
+            <div class="column">
+                <input type="password" name="password" id="password" data-msg="m_pw">
+                <div id="m_pw" class="msg"></div>
+            </div>
+        </div>
+       
+        <div class="row">
+            <label for="rpword">密码确认</label>
+            <div class="column">
+                <input type="password" name="rpword" id="rpword" data-msg="m_rpw">
+                <div id="m_rpw" class="msg"></div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="email">邮箱</label>
+            <div class="column">
+                <input type="email" name="email" id="email" data-msg="m_email">
+                <div id="m_email" class="msg"></div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="phonenum">手机</label>
+            <div class="column">
+                <input type="text" name="phonenum" id="phonenum" data-msg="m_phonenum">
+                <div id="m_phonenum" class="msg"></div>
+            </div>
+            
+        </div>
+        <input type="submit" value="提交">
+    </form>
+
+
+    <script src="./validate.js"></script>
+</body>
+</html>

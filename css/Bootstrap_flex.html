@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap flex</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 屏幕宽度大于768px */
+        .wrapper{
+            width: 100%;
+        }
+        /* 使用属性选择器 */
+        /* https://segmentfault.com/q/1010000010559776 */
+        /* 这里匹配的是 col-开头的， 如果是 box col-就不匹配 */
+        [class^=col] {
+            padding: 0 10px;
+            border: 1px solid #999;
+            background-color: #eee;
+            margin-right: 10px;
+            height: 50px;
+            color: red;
+            font-size: 12px;
+            text-align: left;
+            line-height: 30px;
+        }
+        
+        .row{
+           
+            display: flex;
+            width: 100%;
+            padding: 10px 0 10px 10px;
+        }
+        
+        /* 100% / 12 = 8.33% */
+        /* flex:8.33% 相当于 flex: 1 1 8.33% */
+        .col-md-1{ flex: 8.33%; }
+        .col-md-2{ flex: 16.66%; }
+        .col-md-3{ flex: 24.99% }
+        .col-md-4{ flex: 33.33% }
+        .col-md-5{ flex: 41.66% }
+        .col-md-6{ flex: 49.99% }
+        .col-md-7{ flex: 58.33% }
+        .col-md-8{ flex: 66.66% }
+        .col-md-9{ flex: 74.99% }
+        .col-md-10{ flex: 83.33% }
+        .col-md-11{ flex: 91.6% }
+        .col-md-12{ flex: 100% }
+
+       
+        /* 屏幕宽度小于等于768px */
+        @media screen and (max-width:768px){
+            .col-xs-1{ flex: 8.33%; }
+            .col-xs-2{ flex: 16.66%; }
+            .col-xs-3{ flex: 24.99% }
+            .col-xs-4{ flex: 33.33% }
+            .col-xs-5{ flex: 41.66% }
+            .col-xs-6{ flex: 49.99% }
+            .col-xs-7{ flex: 58.33% }
+            .col-xs-8{ flex: 66.66% }
+            .col-xs-9{ flex: 74.99% }
+            .col-xs-10{ flex: 83.33% }
+            .col-xs-11{ flex: 91.6% }
+            .col-xs-12{ flex: 100% }
+        }
+    </style>
+</head>
+<body>
+    <!-- baiduife-230202- 类似Bootstrap 网格布局 -->
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-4 col-xs-4">四栏</div>
+            <div class="col-md-4 col-xs-4">四栏</div>
+            <div class="col-md-4 col-xs-4">四栏</div>
+        </div>
+        <div  class="row">
+            <div class="col-md-3 col-xs-3">三栏</div>
+            <div class="col-md-6 col-xs-6">六栏</div>
+            <div class="col-md-3 col-xs-3">三栏</div>
+        </div>
+        <div  class="row">
+            <div class="col-md-1 col-xs-1">一栏</div>
+            <div class="col-md-1 col-xs-1">一栏</div>
+            <div class="col-md-2 col-xs-2">两栏</div>
+            <div class="col-md-2 col-xs-2">两栏</div>
+            <div class="col-md-6 col-xs-6">六栏</div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-12">一栏</div>
+        </div>
+    </div>
+</body>
+</html>

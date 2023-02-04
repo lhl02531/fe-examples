@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-task-1</title>
+    <style>
+        
+        dl{
+            display: grid;
+            border: 1px solid #000;
+            grid-template-rows: repeat(8,50px);
+            grid-template-columns: 80px 200px;
+
+            background-color: #eee;
+            padding: 20px 0 0 20px
+        }
+        dt{
+            font-weight: bold;
+        }
+        dt:nth-of-type(1){
+            grid-row-start: 1;
+            grid-row-end: 4;
+        }
+        dt:nth-of-type(2){
+            grid-row-start: 4;
+            grid-row-end: 6;
+        }
+        dt:nth-of-type(3){
+            grid-row-start: 6;
+            grid-row-end: 9;
+        }
+    </style>
+</head>
+<body>
+    <!-- baiduife-230204-grid task1 -->
+    <!-- 应用网格布局定义列表，让 dt 显示在一边，dd 显示在另一边，呈两列布局 -->
+    <dl>
+        <dt>恐龙类</dt>
+        <dd>尹氏芦沟龙</dd>
+        <dd>破碎中国虚骨龙</dd>
+        <dd>原始川东虚骨龙</dd>
+        <dt>鲨鱼类</dt>
+        <dd>六鳃鲨目</dd>
+        <dd>鼠鲨目</dd>
+        <dt>鸟类</dt>
+        <dd>雁形目</dd>
+        <dd>雨燕目</dd>
+        <dd>夜鹰目</dd>
+    </dl>
+
+</body>
+</html>

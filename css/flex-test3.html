@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex_test2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            /* 占满屏幕 */
+            height: 100vh;
+        }
+        header,footer{
+            flex: 0 0 200px;
+            background-color: blue;
+            
+            width: 100%;
+        }
+        .HolyGrail-content{
+            display: flex;
+            flex: 1;
+        }
+        main{
+            flex: 1;
+            background: orange;
+        }
+        aside{
+            flex: 0 0 200px;
+            background: red;
+        }
+        .left{
+            order: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- baiduife-flex-test3 -->
+    <!-- 三列等高自适应，底部页脚粘附布局, 又叫圣杯布局 -->
+    <header>
+        header
+    </header>
+    <div class="HolyGrail-content">
+        <main>
+            <div class=""></div>
+        </main>
+        <aside class="left">
+            左侧边栏
+        </aside>
+        <aside>
+            右侧边栏
+        </aside>
+    </div>
+    <footer>
+        footer
+    </footer>
+</body>
+</html>

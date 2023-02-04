@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-task-3</title>
+    <style>
+        .container{
+            display: grid;
+            width: 80vw;
+            height: 600px;
+            grid-template-rows: repeat(3, 140px);
+            grid-template-columns: repeat(6, 140px);
+            gap: 20px;
+            grid-auto-flow: row dense;
+        }
+        .box{
+            padding: 10px 0 0 10px;
+            background-color: lightblue;
+            color: white;
+        }
+
+        .box1{
+            grid-row-start: span 2;
+            
+            grid-column-start: span 2;
+            /* 不生效？ */
+        }
+        .box2{
+            grid-column-start: span 2;
+           
+        }
+        .box5{
+            grid-row-start: span 2;
+            
+        }
+        .box6{
+            grid-row-start: -2;
+            grid-row-end: -1;
+            grid-column-start: 4;
+            grid-column-end: 5;
+        }
+        .box7{
+            grid-column-start: span 2;
+            grid-row-start: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box box5">5</div>
+        <div class="box box6">6</div>
+        <div class="box box7">7</div>
+        <div class="box box8" >8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+    </div>
+</body>
+</html>

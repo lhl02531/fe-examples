@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-task-4-响应式页面布局</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            grid-auto-flow: row;
+            row-gap: 1vh;
+            column-gap: 1vw;
+            grid-template-rows: 10vh 10vh 1fr 10vh 10vh;
+            grid-template-areas: 'header'
+                                 'sidebar1'
+                                 'main'
+                                 'sidebar2'
+                                 'footer';
+        }
+
+        header{
+            padding: 10px;
+            grid-area: header;
+            background-color: lightblue;
+
+        }
+        .sidebar1{
+            padding: 10px;
+            grid-area: sidebar1;
+            background-color: lightgrey;
+        }
+        main{
+            padding: 10px;
+            grid-area: main;
+            background-color: lightslategray;
+        }
+        .sidebar2{
+            padding: 10px;
+            grid-area: sidebar2;
+            background-color: lightyellow;
+        }
+        footer{
+            padding: 10px;
+            grid-area: footer;
+            background-color: lightblue;
+        }
+
+
+        /*  500 < 屏幕 < 600 */
+        @media screen and (min-width:500px) {
+            body{
+                grid-template-rows: 10vh  1fr 10vh 10vh;
+                grid-template-columns: 30% 70%;
+                
+                grid-template-areas: 'header header'
+                                    'sidebar1 main'
+                                    'sidebar2 sidebar2'
+                                    'footer footer';
+            }
+        }
+
+        /* 600 < 屏幕 */
+        @media screen and (min-width:600px) {
+            body{
+                grid-template-rows: 10vh  1fr 10vh ;
+                grid-template-columns: 15% 70% 15%;
+                grid-template-areas: 'header header header'
+                                    'sidebar1 main sidebar2'
+                                    'footer footer footer';
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- baiduife-应用网格布局，实现一个响应式页面布局 -->
+    <!-- 应用媒体查询实现响应式布局,浏览器窗口宽度小于 500 像素,单列布局 -->
+    <!-- 浏览器窗口宽度大于 500 像素,小于 600 像素时,页面呈现双列布局,siadebar1 位于左侧，content 位于右侧 -->
+    <!-- 浏览器窗口宽度大于 600 像素时，三列布局,页面呈现三列布局，siadebar1 位于左侧，content 位于中间，sidebar3 位于右侧 -->
+    <header> header</header>
+    <main> main content</main>
+    
+    <aside class="sidebar1"> aside1 </aside>
+    <aside class="sidebar2"> aside2 </aside>
+    <footer> footer </footer>
+</body>
+</html>

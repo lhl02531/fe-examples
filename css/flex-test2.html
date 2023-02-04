@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex_test2</title>
+    <style>
+        section{
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        ul{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 30px;
+            padding: 10px 20px;
+            border: 1px solid grey;
+        }
+
+        li{
+            
+            list-style: none;
+            flex: 0 0 100px;
+            font-size: 20px;
+        }
+        .right{
+            flex: 1;
+            text-align: right;
+        }
+        li.active::after{
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 1px;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- baiduife-230201-flex布局test2 -->
+    <section>
+        <ul>
+            <li class="active"> HOME</li>
+            <li> BLOG</li>
+            <li> ARTICLE</li>
+            <li class="right"> CONTACT</li>
+        </ul>
+    </section>
+</body>
+</html>
