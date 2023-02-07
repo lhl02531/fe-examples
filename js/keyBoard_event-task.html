@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyborder-event-task-1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: lightgrey;
+        }
+        .container{
+            width: 80%;
+            margin: 50px auto 0;
+        }
+        input[type="text"]{
+            width: 100%;
+            height: 40px;   
+            padding: 5px 12px ;
+            border: none;    
+            border-radius: 3px;
+            
+        }
+        input[type="text"]:active{
+            border: 2px solid lightblue;
+            /* outline-offset: -3px; */
+        }
+        .part{
+            position: relative;
+            width: 100%;
+            background-color: #fff;
+            margin-top: 10px;
+            padding: 10px 40px;
+        }
+        .part::before,.part::after{
+            position: absolute;
+            content: '';
+            display: block;
+            background-repeat: no-repeat;
+            background-size: 10px 10px;
+            /* 图片居中 */
+            background-position: center;
+            width: 16px;
+            height: 16px;
+            left: 18px;
+        }
+
+        .part::before{
+            background-image: url('./user-fill.svg');
+            top: 13px;
+        } 
+
+        .part::after{
+            background-image: url('./phone.svg');
+            bottom: 10px;
+        }
+
+        .name{
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .phonenum{
+            font-size: 12px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <!-- baiduife-keyborder-event-task-1-实现一个电话簿检索功能 -->
+    <!-- 实现检索功能，可以按照名称和电话号码进行搜索，输入一个字符，自动筛选出符合条件的电话簿信息，展示在下方 -->
+    <!-- 实现检索输入框的过滤，只能输入字母键，数字键，方向键和删除键，如果输入为其他键值，不接受其他按键。 -->
+    <!-- 搜索应该不区分大小写 -->
+    <div class="container">
+        <input type="text" name="search" id="search" placeholder="搜索联系人..">
+        <div id="contactList">
+        <!-- 
+            <div class="part">
+                <p class="name">Amy</p>
+                <p class="phonenum">12345678980</p>
+            </div>
+            <div class="part">
+                <p class="name">Bob</p>
+                <p class="phonenum">12345678981</p>
+            </div>
+            <div class="part">
+                <p class="name">Danny</p>
+                <p class="phonenum">18539284752</p>
+            </div>
+            <div class="part">
+                <p class="name">Jennie</p>
+                <p class="phonenum">18539284753</p>
+            </div>
+         -->
+        </div>
+    </div>
+    <script src="./keyborder-task-1.js"></script>
+</body>
+</html>
